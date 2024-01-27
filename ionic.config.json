@@ -1,0 +1,7 @@
+{
+  "name": "cyclo-tourist",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
