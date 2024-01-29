@@ -24,3 +24,54 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+/* ------ Deafult Reset ------ */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  outline: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+:root {
+  /** primary **/
+  --ion-color-primary: #69bb7b;
+  --ion-color-primary-rgb: 105, 187, 123;
+  --ion-color-primary-contrast: #000000;
+  --ion-color-primary-contrast-rgb: 0, 0, 0;
+  --ion-color-primary-shade: #5ca56c;
+  --ion-color-primary-tint: #78c288;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+ion-button {
+  --background: #69bb7b;
+
+  &.round-button {
+    --background: #333;
+  }
+}
+
+.error-message {
+  p {
+    font-size: 12px;
+    line-height: 22px;
+    margin: 2px 0px 0px;
+    color: #fff;
+  }
+}
+
+.label-text {
+  margin-top: -2px !important;
+}

@@ -1,0 +1,61 @@
+.capitalize {
+  text-transform: capitalize;
+}
+
+ion-back-button {
+  --color: #fff;
+  --background: none;
+
+  ion-icon {
+    margin-right: 8px;
+  }
+}
+
+ion-content {
+  --background: url("../../../assets/register-background.jpg") no-repeat center
+    center / cover;
+  height: 100vh;
+  position: relative;
+
+  ion-item {
+    --color: #9b9ea3;
+    --background: #edf0f7;
+    border-radius: 32px;
+    margin-top: 8px;
+
+    ion-input {
+      padding-left: 24px !important;
+    }
+
+    &.checkbox-container {
+      --background: none !important;
+      --color: #fff !important;
+    }
+  }
+}
+
+.register-btn {
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+  border-radius: 4px;
+  margin-top: 18px;
+}
+
+ion-checkbox {
+  position: relative;
+}
+
+ion-footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  ion-toolbar {
+    --background: none;
+    --ion-color-base: transparent !important;
+    ion-button {
+      font-size: 20px;
+      --color: #fa4616;
+    }
+  }
+}

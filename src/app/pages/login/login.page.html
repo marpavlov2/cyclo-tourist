@@ -1,0 +1,101 @@
+<ion-content [fullscreen]="true">
+  <div class="login-container">
+    <form [formGroup]="loginForm">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item class="ion-no-padding">
+              <ion-input
+                name="email"
+                type="email"
+                formControlName="email"
+                label="E-pošta"
+                label-placement="floating"
+                fill="solid"
+              ></ion-input>
+              <ion-icon
+                class="ion-align-self-center"
+                name="mail"
+                slot="start"
+                align-self-center
+              ></ion-icon>
+            </ion-item>
+            <div
+              class="error-message"
+              *ngIf="!email.valid && (email.dirty || email.touched)"
+            >
+              <p *ngIf="email.errors && password.errors['required']">
+                Email je obavezno polje.
+              </p>
+              <p *ngIf="email.errors && password.errors['minlength']">
+                Unesite email u ispravnom formatu.
+              </p>
+            </div>
+            <ion-item class="ion-no-padding ion-margin-top custom-ios-input">
+              <ion-input
+                name="password"
+                type="password"
+                formControlName="password"
+                label="Lozinka"
+                label-placement="floating"
+                fill="solid"
+              ></ion-input>
+              <ion-icon
+                class="ion-align-self-center"
+                name="lock-closed"
+                slot="start"
+              ></ion-icon>
+            </ion-item>
+            <div
+              class="error-message"
+              *ngIf="!password.valid && (password.dirty || password.touched)"
+            >
+              <p *ngIf="password.errors && password.errors['required']">
+                Lozinka je obavezno polje.
+              </p>
+              <p *ngIf="password.errors && password.errors['minlength']">
+                Lozinka mora sadržavati minimalno 6 znakova.
+              </p>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-text class="ion-text-end">
+          <p class="ion-margin-vertical forgotten-password">
+            Zaboravljena lozinka?
+          </p>
+        </ion-text>
+      </ion-grid>
+      <ion-button
+        class="login-btn"
+        expand="block"
+        (click)="login()"
+        [disabled]="!loginForm.valid"
+      >
+        Prijava
+      </ion-button>
+    </form>
+
+    <div class="ion-margin-top">
+      <ion-button
+        class="facebook-btn"
+        shape="round"
+        expand="full"
+        (click)="loginWithFacebook()"
+      >
+        Prijava Facebookom
+        <ion-icon slot="start" name="logo-facebook"></ion-icon>
+      </ion-button>
+    </div>
+
+    <div class="ion-margin-top">
+      <ion-button
+        class="register-btn"
+        shape="round"
+        expand="full"
+        routerLink="/register"
+      >
+        Nemaš račun?&nbsp; <span> Registriraj se </span>
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

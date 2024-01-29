@@ -1,0 +1,147 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title> Profile </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-top-no-padding">
+  <ion-row class="ion-margin-top ion-justify-content-center">
+    <div class="avatar-container">
+      <ion-icon name="person"></ion-icon>
+    </div>
+  </ion-row>
+  <ion-row class="ion-margin-top ion-justify-content-center">
+    <p class="title ion-margin-bottom">Mario Pavlovic</p>
+  </ion-row>
+  <p class="title ion-margin-top ion-margin-bottom">Osobni podaci</p>
+  <form [formGroup]="registerForm" (submit)="updateProfile()">
+    <ion-grid>
+      <ion-row class="ion-margin-bottom ion-margin-top">
+        <ion-col>
+          <ion-item lines="none" class="ion-no-padding custom-ios-input">
+            <ion-icon
+              class="ion-align-self-center"
+              name="person-outline"
+              slot="start"
+              align-self-center
+            ></ion-icon>
+            <ion-input
+              name="firstName"
+              type="text"
+              formControlName="firstName"
+              label="Ime"
+              label-placement="floating"
+              fill="solid"
+              required
+              lines="none"
+            ></ion-input>
+          </ion-item>
+          <div
+            class="error-message"
+            *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+          >
+            <p *ngIf="firstName.errors && firstName.errors['required']">
+              Ime je obavezno polje.
+            </p>
+          </div>
+          <ion-item lines="none" class="ion-no-padding custom-ios-input">
+            <ion-icon
+              class="ion-align-self-center"
+              name="person-outline"
+              slot="start"
+              align-self-center
+            ></ion-icon>
+            <ion-input
+              name="lastName"
+              type="text"
+              formControlName="lastName"
+              label="Prezime"
+              label-placement="floating"
+              fill="solid"
+              required
+            ></ion-input>
+          </ion-item>
+          <div
+            class="error-message"
+            *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
+          >
+            <p *ngIf="lastName.errors && lastName.errors['required']">
+              Prezime je obavezno polje.
+            </p>
+          </div>
+          <ion-item lines="none" class="ion-no-padding custom-ios-input">
+            <ion-icon
+              class="ion-align-self-center"
+              name="location-outline"
+              slot="start"
+              align-self-center
+            ></ion-icon>
+            <ion-input
+              name="city"
+              type="text"
+              formControlName="city"
+              label="Grad"
+              label-placement="floating"
+              fill="solid"
+              required
+            ></ion-input>
+          </ion-item>
+          <ion-item lines="none" class="ion-no-padding custom-ios-input">
+            <ion-icon
+              class="ion-align-self-center"
+              name="location-outline"
+              slot="start"
+              align-self-center
+            ></ion-icon>
+            <ion-input
+              name="address"
+              type="text"
+              formControlName="address"
+              label="Adresa"
+              label-placement="floating"
+              fill="solid"
+              required
+            ></ion-input>
+          </ion-item>
+          <ion-item lines="none" class="ion-no-padding custom-ios-input">
+            <ion-icon
+              class="ion-align-self-center"
+              name="call-outline"
+              slot="start"
+              align-self-center
+            ></ion-icon>
+            <ion-input
+              name="phone"
+              type="phone"
+              formControlName="phone"
+              label="Broj mobitela"
+              label-placement="floating"
+              fill="solid"
+              required
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-button
+        class="order-btn"
+        expand="block"
+        type="submit"
+        [disabled]="!registerForm.valid"
+      >
+        Spremi
+      </ion-button>
+    </ion-grid>
+    <div class="ion-text-end">
+      <ion-button
+        color="none"
+        outline
+        class="order-again delivered ion-no-padding ion-align-self-end"
+        (click)="logout();"
+      >
+        <ion-icon name="log-out-outline" slot="start"></ion-icon>
+        Odjavi se
+      </ion-button>
+    </div>
+  </form>
+</ion-content>

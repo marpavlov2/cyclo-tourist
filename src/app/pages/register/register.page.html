@@ -1,0 +1,193 @@
+<ion-content class="ion-padding">
+  <div class="ion-text-center">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+  </div>
+  <form [formGroup]="registerForm" (submit)="register()">
+    <ion-grid>
+      <ion-row class="ion-margin-top">
+        <ion-col>
+          <ion-item class="ion-no-padding custom-ios-input">
+            <ion-input
+              name="firstName"
+              type="text"
+              formControlName="firstName"
+              label="Ime"
+              label-placement="floating"
+              fill="solid"
+              required
+            ></ion-input>
+          </ion-item>
+          <div
+            class="error-message"
+            *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+          >
+            <p *ngIf="firstName.errors && firstName.errors['required']">
+              Ime je obavezno polje.
+            </p>
+          </div>
+          <ion-item class="ion-no-padding custom-ios-input">
+            <ion-input
+              name="lastName"
+              type="text"
+              formControlName="lastName"
+              label="Prezime"
+              label-placement="floating"
+              fill="solid"
+              required
+            ></ion-input>
+          </ion-item>
+          <div
+            class="error-message"
+            *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
+          >
+            <p *ngIf="lastName.errors && lastName.errors['required']">
+              Prezime je obavezno polje.
+            </p>
+          </div>
+          <ion-item class="ion-no-padding custom-ios-input">
+            <ion-input
+              name="city"
+              type="text"
+              formControlName="city"
+              label="Grad"
+              label-placement="floating"
+              fill="solid"
+              required
+            ></ion-input>
+          </ion-item>
+          <div
+            class="error-message"
+            *ngIf="city.invalid && (city.dirty || city.touched)"
+          >
+            <p *ngIf="city.errors && city.errors['required']">
+              Grad je obavezno polje.
+            </p>
+            <p *ngIf="city.errors && city.errors['minlength']">
+              Grad mora sadržavati minimalno 4 znaka.
+            </p>
+          </div>
+          <ion-item class="ion-no-padding custom-ios-input">
+            <ion-input
+              name="address"
+              type="text"
+              formControlName="address"
+              label="Adresa"
+              label-placement="floating"
+              fill="solid"
+              required
+            ></ion-input>
+          </ion-item>
+          <div
+            class="error-message"
+            *ngIf="address.invalid && (address.dirty || address.touched)"
+          >
+            <p *ngIf="address.errors && address.errors['required']">
+              Adresa je obavezno polje.
+            </p>
+            <p *ngIf="address.errors && address.errors['minlength']">
+              Adresa mora sadržavati minimalno 4 znaka.
+            </p>
+          </div>
+          <ion-item class="ion-no-padding custom-ios-input">
+            <ion-input
+              name="phone"
+              type="phone"
+              formControlName="phone"
+              label="Broj mobitela"
+              label-placement="floating"
+              fill="solid"
+              required
+            ></ion-input>
+          </ion-item>
+          <div
+            class="error-message"
+            *ngIf="phone.invalid && (phone.dirty || phone.touched)"
+          >
+            <p *ngIf="phone.errors && phone.errors['required']">
+              Broj mobitela je obavezno polje. Unesti u formatu 0996848883
+            </p>
+            <p *ngIf="phone.errors && phone.errors['minlength']">
+              Broj mobitela mora sadržavati minimalno 6 znakova.
+            </p>
+          </div>
+          <ion-item class="ion-no-padding custom-ios-input">
+            <ion-input
+              name="email"
+              type="email"
+              formControlName="email"
+              label="E-pošta"
+              label-placement="floating"
+              fill="solid"
+              required
+            ></ion-input>
+          </ion-item>
+          <div
+            class="error-message"
+            *ngIf="email.invalid && (email.dirty || email.touched)"
+          >
+            <p *ngIf="email.errors && email.errors['required']">
+              Email je obavezno polje.
+            </p>
+            <p *ngIf="email.errors && email.errors['minlength']">
+              Unesite email u ispravnom formatu.
+            </p>
+          </div>
+          <ion-item class="ion-no-padding custom-ios-input">
+            <ion-input
+              name="password"
+              type="password"
+              formControlName="password"
+              label="Lozinka"
+              label-placement="floating"
+              fill="solid"
+              required
+            ></ion-input>
+          </ion-item>
+          <div
+            class="error-message"
+            *ngIf="password.invalid && (password.dirty || password.touched)"
+          >
+            <p *ngIf="password.errors && password.errors['required']">
+              Lozinka je obavezno polje.
+            </p>
+            <p *ngIf="password.errors && password.errors['minlength']">
+              Lozinka mora sadržavati minimalno 6 znakova.
+            </p>
+          </div>
+          <ion-item
+            lines="none"
+            class="checkbox-container ion-no-padding ion-no-border"
+          >
+            <ion-label style="text-decoration: underline"
+              ><small (click)="goToTerms()"
+                >Prihvaćam uvjete korištenja i pravila privatnosti</small
+              >
+            </ion-label>
+            <ion-checkbox slot="end" formControlName="checkedTerms">
+            </ion-checkbox>
+          </ion-item>
+          <ion-item
+            lines="none"
+            class="checkbox-container ion-no-padding ion-no-border"
+          >
+            <ion-label
+              ><small>Potvrđujem da sam stariji od 18 godina</small>
+            </ion-label>
+            <ion-checkbox slot="end" formControlName="ageGate"> </ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-button
+        class="ion-margin-top register-btn"
+        expand="block"
+        type="submit"
+        [disabled]="!registerForm.valid"
+      >
+        Registracija
+      </ion-button>
+    </ion-grid>
+  </form>
+</ion-content>
