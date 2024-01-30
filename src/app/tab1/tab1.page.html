@@ -1,13 +1,84 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> Tab 1 </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="home">
+  <div class="gray-section">
+    <ion-grid class="ion-grid-container ion-padding">
+      <div class="new-experiences ion-margin-bottom">
+        <div class="avatar-container ion-margin-end">
+          <ion-icon name="person"></ion-icon>
+        </div>
+        <span class="welcome-user">
+          Pozdrav <span class="user-name"> Mario,</span>
+        </span>
+      </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+      <div class="ion-padding-top ion-padding-end">
+        <div class="explore-routes-container">
+          <div class="explore-img"></div>
+          <div class="ion-padding">
+            <ion-label>
+              Istraži <br />
+              Bilogoru
+            </ion-label>
+            <div class="feel-container">
+              <span class="feel-label"> Osijeti adrenalin! </span>
+              <ion-icon
+                class="ion-align-self-center"
+                name="arrow-forward"
+                slot="start"
+                align-self-center
+              ></ion-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-container ion-padding-top">
+        <div class="ion-padding-top">
+          <span>
+            Broj prijeđenih kilometara
+            <span class="value">268 km</span>
+          </span>
+        </div>
+      </div>
+    </ion-grid>
+  </div>
+  <ion-grid class="ion-grid-container ion-padding">
+    <div class="ion-padding-top">
+      <h2>Novosti</h2>
+    </div>
+
+    <ion-list lines="none">
+      <ion-card class="list-item-container ion-padding-top">
+        <div class="list-img"></div>
+        <div class="ion-align-self-center ion-padding">
+          <ion-card-header>
+            <ion-card-title>Dostupna nova ruta</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content class="ion-no-padding">
+            <p class="line-clamp-2">
+              Započnite dan adrenalinskim stazama bilogore uz odličnu
+              proizvedenih na našem ili okolnim obiteljskim imanjima. Uživajte u
+              šetnji vinogradom
+            </p>
+          </ion-card-content>
+        </div>
+      </ion-card>
+
+      <ion-card class="list-item-container ion-padding-top">
+        <div class="list-img"></div>
+        <div class="ion-align-self-center ion-padding">
+          <ion-card-header>
+            <ion-card-title>Okusi baštine</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content class="ion-no-padding">
+            <p class="line-clamp-2">
+              Započnite dan adrenalinskim stazama bilogore uz odličnu
+              proizvedenih na našem ili okolnim obiteljskim imanjima. Uživajte u
+              šetnji vinogradom
+            </p>
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </ion-list>
+  </ion-grid>
 </ion-content>

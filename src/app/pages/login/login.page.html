@@ -4,20 +4,18 @@
       <ion-grid>
         <ion-row>
           <ion-col>
-            <ion-item class="ion-no-padding">
+            <ion-item lines="none" class="ion-no-padding">
               <ion-input
                 name="email"
                 type="email"
                 formControlName="email"
                 label="E-pošta"
                 label-placement="floating"
-                fill="solid"
               ></ion-input>
               <ion-icon
                 class="ion-align-self-center"
                 name="mail"
                 slot="start"
-                align-self-center
               ></ion-icon>
             </ion-item>
             <div
@@ -31,14 +29,16 @@
                 Unesite email u ispravnom formatu.
               </p>
             </div>
-            <ion-item class="ion-no-padding ion-margin-top custom-ios-input">
+            <ion-item
+              lines="none"
+              class="ion-no-padding ion-margin-top custom-ios-input"
+            >
               <ion-input
                 name="password"
                 type="password"
                 formControlName="password"
                 label="Lozinka"
                 label-placement="floating"
-                fill="solid"
               ></ion-input>
               <ion-icon
                 class="ion-align-self-center"
@@ -59,32 +59,30 @@
             </div>
           </ion-col>
         </ion-row>
-        <ion-text class="ion-text-end">
-          <p class="ion-margin-vertical forgotten-password">
-            Zaboravljena lozinka?
-          </p>
-        </ion-text>
       </ion-grid>
       <ion-button
-        class="login-btn"
+        class="login-btn ion-margin-top"
         expand="block"
         (click)="login()"
         [disabled]="!loginForm.valid"
+        shape="round"
       >
         Prijava
       </ion-button>
+      <ion-text class="ion-text-center">
+        <p class="ion-margin-vertical forgotten-password">
+          Zaboravljena lozinka?
+        </p>
+      </ion-text>
     </form>
 
-    <div class="ion-margin-top">
-      <ion-button
-        class="facebook-btn"
-        shape="round"
-        expand="full"
-        (click)="loginWithFacebook()"
-      >
-        Prijava Facebookom
-        <ion-icon slot="start" name="logo-facebook"></ion-icon>
-      </ion-button>
+    <div class="ion-padding-top">
+      <div class="ion-padding-top ion-text-center">
+        <ion-button class="facebook-btn" (click)="loginWithFacebook()">
+          Facebook prijava
+          <ion-icon slot="start" name="logo-facebook"></ion-icon>
+        </ion-button>
+      </div>
     </div>
 
     <div class="ion-margin-top">

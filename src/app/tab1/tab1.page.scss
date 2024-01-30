@@ -1,0 +1,119 @@
+.gray-section {
+  background: linear-gradient(180deg, #fff, #f9f8fb);
+  border-radius: 0px 0px 24px 0px;
+}
+
+.new-experiences {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .avatar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #efefef;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+
+    ion-icon {
+      font-size: 20px;
+      color: #9b9ea3;
+      padding: 12px;
+    }
+
+    &.has-image {
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  .user-name {
+    font-weight: 500;
+  }
+}
+
+.explore-routes-container {
+  position: relative;
+  width: 100%;
+  min-height: 220px;
+  background: linear-gradient(135deg, #a8c0ff, #3f2b96);
+  border-radius: 24px;
+
+  .explore-img {
+    position: absolute;
+    top: -12px;
+    right: -32px;
+    width: 228px;
+    height: 254px;
+    background: url("../../assets/explore-img-2.png") no-repeat center;
+    background-size: contain;
+    z-index: 1;
+  }
+
+  ion-label {
+    color: #fff;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 1px;
+  }
+
+  .feel-container {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    display: flex;
+    align-items: center;
+
+    .feel-label {
+      color: #fff;
+      font-weight: 400;
+      margin-right: 8px;
+    }
+
+    ion-icon {
+      color: #fff;
+      font-size: 24px;
+    }
+  }
+}
+
+.info-container {
+  color: #292929;
+
+  .value {
+    color: var(--ion-color-primary);
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
+
+.list-item-container {
+  display: flex;
+  box-shadow: none;
+  .list-img {
+    height: 100px;
+    min-width: 100px;
+    border-radius: 24px;
+    background: url("../../assets/blog-img.jpg") no-repeat center;
+    background-size: cover;
+    --border: unset;
+    z-index: 1;
+  }
+
+  ion-card-title {
+    color: #181818;
+    font-size: 22px;
+    line-height: 28px;
+    margin-bottom: 4px;
+  }
+
+  ion-card-content {
+    p {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+}

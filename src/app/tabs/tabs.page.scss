@@ -1,1 +1,11 @@
+ion-tab-bar {
+  --background: #fff;
+  --color: #ccc;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 24px 24px 0px 0px;
+  min-height: 64px;
 
+  ion-label {
+    color: #303030;
+  }
+}

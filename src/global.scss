@@ -32,17 +32,17 @@
   border: 0;
   box-sizing: border-box;
   outline: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 :root {
   /** primary **/
-  --ion-color-primary: #69bb7b;
+  --ion-color-primary: #3f2b96;
   --ion-color-primary-rgb: 105, 187, 123;
   --ion-color-primary-contrast: #000000;
   --ion-color-primary-contrast-rgb: 0, 0, 0;
-  --ion-color-primary-shade: #5ca56c;
-  --ion-color-primary-tint: #78c288;
+  --ion-color-primary-shade: #372684;
+  --ion-color-primary-tint: #5240a1;
 }
 
 h1,
@@ -56,11 +56,15 @@ h6 {
 }
 
 ion-button {
-  --background: #69bb7b;
+  --background: var(--ion-color-primary);
 
   &.round-button {
     --background: #333;
   }
+}
+
+ion-checkbox {
+  --checkmark-color: #fff;
 }
 
 .error-message {
@@ -68,10 +72,26 @@ ion-button {
     font-size: 12px;
     line-height: 22px;
     margin: 2px 0px 0px;
-    color: #fff;
+    color: var(--ion-color-primary);
   }
 }
 
-.label-text {
-  margin-top: -2px !important;
+.ellipsis-container {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
